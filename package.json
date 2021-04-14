@@ -1,0 +1,37 @@
+{
+  "name": "tiny-rng",
+  "version": "0.0.1",
+  "description": "Tiny LCG utility.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist/**/*"],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p4stoboy/tiny-rng.git"
+  },
+  "keywords": ["prng", "rng", "random", "seed", "generator", "lcg", "number"],
+  "author": "p4_",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/p4stoboy/tiny-rng/issues"
+  },
+  "homepage": "https://github.com/p4stoboy/tiny-rng#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.24.0",
+    "eslint-config-google": "^0.14.0",
+    "typescript": "^3.9.9"
+  }
+}
