@@ -9,7 +9,7 @@ $ npm install tiny-rng --s
 ```
 
 ```javascript
-const prng = reqire('tiny-rng');
+const prng = require('tiny-rng');
 ```
 
 
