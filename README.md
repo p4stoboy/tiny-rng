@@ -1,11 +1,35 @@
 # tiny-rng
+```
 Tiny LCG class for seed-based value generation.
+```
 
-### `npm install tiny-rng --s`
+# Install 
+```
+$ npm install tiny-rng --s
+```
 
 ```javascript
 const prng = reqire('tiny-rng');
 ```
+
+
+# Usage
+```javascript
+// basic usage
+
+const r = new prng(); // default seed and precision (3)
+r.random() // default range (min: 0, max: 1)
+> 0.xxx - 1.000
+
+const r = new prng(0, 58973); // precision: 0 (returns integer), seed: 58973
+const arr = [];
+for (let i = 0; i < 10; i++) {
+    arr.push(r.random(0, 100)); // min: 0, max: 100
+}
+arr > [ 54, 46, 42, 40, 65, 60, 81, 39, 60, 66 ]
+```
+
+# About
 ```javascript
 // constructor params
 // @_precision <optional number default 3> -> number of decimal places (0 = integer)
@@ -28,17 +52,4 @@ let random_value = r.random(min, max, precision);
 
 r.setPrecision(2);
 ```
-```javascript
-// basic usage
 
-const r = new prng(); // default seed and precision (3)
-r.random() // default range (min: 0, max: 1)
-> 0.xxx - 1.000
-
-const r = new prng(0, 58973); // precision: 0 (returns integer), seed: 58973
-const arr = [];
-for (let i = 0; i < 10; i++) {
-    arr.push(r.random(0, 100)); // min: 0, max: 100
-}
-arr > [ 54, 46, 42, 40, 65, 60, 81, 39, 60, 66 ]
-```
