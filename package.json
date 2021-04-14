@@ -1,6 +1,6 @@
 {
   "name": "tiny-rng",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Tiny LCG utility for seed-based value generation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

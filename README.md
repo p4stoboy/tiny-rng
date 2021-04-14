@@ -19,7 +19,7 @@ const prng = require('tiny-rng');
 
 const r = new prng(); // default seed and precision (3)
 r.random() // default range (min: 0, max: 1)
-> 0.xxx - 1.000
+> 0.000 - 1.000
 
 const r = new prng(0, 58973); // precision: 0 (returns integer), seed: 58973
 const arr = [];
@@ -33,10 +33,10 @@ arr > [ 54, 46, 42, 40, 65, 60, 81, 39, 60, 66 ]
 ```javascript
 // constructor params
 // @_precision <optional number default 3> -> number of decimal places (0 = integer)
-// @_seed <optional number default Date.now() % 2**32-1> -> starting seed of prng instance
+// @_seed <optional number default Date.now() % 2**31-1> -> starting seed of prng instance
 // @_a <optional number default 16807> -> LCG multiplier
 // @_c <optional number default 0> -> LCG increment
-// @_modulus <optional number default 2**32-1 -> LCG modulus
+// @_modulus <optional number default 2**31-1 -> LCG modulus
 
 const r = new prng(_precision, _seed, _a, _c, _modulus);
 
